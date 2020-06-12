@@ -3,19 +3,19 @@ services:
   - docker
 
 before_install:
-  - docker build -t jigglybytez/fibonnaci-calculator-app -f ./client/Dockerfile.dev ./client
+  - docker build -t jigglybytez/fibonnaci-app-test -f ./client/Dockerfile.dev ./client
 
 script:
-  - docker run jigglybytez/fibonnaci-calulator-app npm test -- --coverage
+  - docker run jigglybytez/fibonnaci-app-test npm test -- --coverage
 
 after_success:
-  - docker build -t jigglybytez/fibonnaci-client ./client
-  - docker build -t jigglybytez/fibonnaci-nginx ./nginx
-  - docker build -t jigglybytez/fibonnaci-server ./server
-  - docker build -t jigglybytez/fibonnaci-worker ./worker
+  - docker build -t jigglybytez/fibonnaci-app-client ./client
+  - docker build -t jigglybytez/fibonnaci-app-nginx ./nginx
+  - docker build -t jigglybytez/fibonnaci-app-server ./server
+  - docker build -t jigglybytez/fibonnaci-app-worker ./worker
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
-  - docker push jigglybytez/fibonnaci-client
-  - docker push jigglybytez/fibonnaci-nginx
-  - docker push jigglybytes/fibonnaci-server
-  - docker push jigglybytez/fibonnaci-worker
+  - docker push jigglybytez/fibonnaci-app-client
+  - docker push jigglybytez/fibonnaci-app-nginx
+  - docker push jigglybytes/fibonnaci-app-server
+  - docker push jigglybytez/fibonnaci-app-worker
 
