@@ -6,7 +6,7 @@ before_install:
   - docker build -t jigglybytez/fibonnaci-calculator-app -f ./client/Dockerfile.dev ./client
 
 script:
-  - docker run -e CI=true jigglybytez/fibonnaci-calulator-app npm run test -- --coverage
+  - docker run jigglybytez/fibonnaci-calulator-app npm test -- --coverage
 
 after_success:
   - docker build -t jigglybytez/fibonnaci-client ./client
