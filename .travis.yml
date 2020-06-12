@@ -1,0 +1,21 @@
+sudo: required
+services:
+  - docker
+
+before_install:
+  - docker build -t jigglybytez/fibonnaci-calculator-app -f ./client/Dockerfile.dev ./client
+
+script:
+  - docker run -e CI=true jigglybytez/fibonnaci-calulator-app npm test -- --coverage
+
+after_success:
+  - docker build -t jigglybytez/fibonnaci-client ./client
+  - docker build -t jigglybytez/fibonnaci-nginx ./nginx
+  - docker build -t jigglybytez/fibonnaci-server ./server
+  - docker build -t jigglybytez/fibonnaci-worker ./worker
+  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
+  - docker push jigglybytez/fibonnaci-client
+  - docker push jigglybytez/fibonnaci-nginx
+  - docker push jigglybytes/fibonnaci-server
+  - docker push jigglybytez/fibonnaci-worker
+
