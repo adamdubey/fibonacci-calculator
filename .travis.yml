@@ -3,19 +3,19 @@ services:
   - docker
 
 before_install:
-  - docker build -t jigglybytez/fibonnaci-app-test -f ./client/Dockerfile.dev ./client
+  - docker build -t jigglybytez/fibonacci-app-test -f ./client/Dockerfile.dev ./client
 
 script:
-  - docker run -e CI=true jigglybytez/fibonnaci-app-test npm test
+  - docker run -e CI=true jigglybytez/fibonacci-app-test npm test
 
 after_success:
-  - docker build -t jigglybytez/fibonnaci-app-client ./client
-  - docker build -t jigglybytez/fibonnaci-app-nginx ./nginx
-  - docker build -t jigglybytez/fibonnaci-app-server ./server
-  - docker build -t jigglybytez/fibonnaci-app-worker ./worker
+  - docker build -t jigglybytez/fibonacci-app-client ./client
+  - docker build -t jigglybytez/fibonacci-app-nginx ./nginx
+  - docker build -t jigglybytez/fibonacci-app-server ./server
+  - docker build -t jigglybytez/fibonacci-app-worker ./worker
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
-  - docker push jigglybytez/fibonnaci-app-client
-  - docker push jigglybytez/fibonnaci-app-nginx
-  - docker push jigglybytes/fibonnaci-app-server
-  - docker push jigglybytez/fibonnaci-app-worker
+  - docker push jigglybytez/fibonacci-app-client
+  - docker push jigglybytez/fibonacci-app-nginx
+  - docker push jigglybytes/fibonacci-app-server
+  - docker push jigglybytez/fibonacci-app-worker
 
