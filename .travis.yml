@@ -18,4 +18,3 @@ after_success:
   - docker push jigglybytez/fibonacci-app-nginx
   - docker push jigglybytes/fibonacci-app-server
   - docker push jigglybytez/fibonacci-app-worker
-
