@@ -1,6 +1,6 @@
 # fibonacci-calculator
 
-[app-demo]()
+![app-demo](app-demo.png)
 
 ## Getting Started
 
@@ -12,7 +12,7 @@ and visit `localhost:3000` in your browser of choice!
 
 ## Overview
 
-1. React App
+1. React.js App
 
 A user will interact with the web app, for example
 a user submits a number to be processed, and then
@@ -28,7 +28,7 @@ primarily functioning as an API for the two databases.
 
 The Redis DB is an in-memory store, which is primarily
 storing all indicies and calculated values, and returning those
-values as key-value pairs to the Express server 
+values as key-value pairs to the Express server
 (and ultimately back to the React app for the user to see)
 
 4. PostgreSQL Database
