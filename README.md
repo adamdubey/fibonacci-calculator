@@ -47,3 +47,15 @@ This DB stores a perminate list of indices that has been received.
 This worker node watches the Redis DB instance for any new indices.
 Whenever it sees a new indice, it will pull the indice, calculate the new
 value, and then return that value to Redis.
+
+## Frameworks & Technologies
+
+- [Create React App](https://facebook.github.io/create-react-app/)
+- [React](https://reactjs.org/)
+- [AWS](https://aws.amazon.com/)
+- [Docker](https://www.docker.com/)
+- [Travis CI](https://travis-ci.org/)
+- [PostgreSQL](https://www.postgresql.org/)
+- [Redis](https://redis.io/)
+- [Node.js](https://nodejs.org/en/)
+- [Nginx](https://www.nginx.com/)
