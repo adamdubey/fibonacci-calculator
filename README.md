@@ -2,9 +2,11 @@
 
 ![app-demo](app-demo.png)
 
+Adventures with Docker and K8s! By default, this project is wired up to leverage Docker for container creation, however there are configuration files available to use Kubernetes instead for development and deployment.
+
 ## Getting Started
 
-To run the entire stack locally:
+To run the entire stack locally via Docker:
 
 `$ docker-compose up`
 
@@ -16,13 +18,13 @@ and then visit `localhost:3000` in your browser of choice.
 
 A user will interact with the web app. For example, when a
 user submits a number to be processed, then
-the front-end app will communicate with the backend (Node.js) server.
+the Front-End app will communicate with the backend (Node.js) server.
 
 ---
 
 **Back-End: Node.js Server**
 
-This Backend Server performs a number of operations,
+This Back-End Server performs a number of operations,
 primarily functioning as an API for the two databases.
 
 ---
@@ -38,7 +40,7 @@ values as key-value pairs to the Node.js server
 
 **PostgreSQL Database**
 
-This DB stores a perminate list of indices that has been received.
+This DB stores a permanent list of indices that has been received.
 
 ---
 
@@ -54,6 +56,7 @@ value, and then return that value to Redis.
 - [React](https://reactjs.org/)
 - [AWS](https://aws.amazon.com/)
 - [Docker](https://www.docker.com/)
+- [Kubernetes](https://kubernetes.io/)
 - [Travis CI](https://travis-ci.org/)
 - [PostgreSQL](https://www.postgresql.org/)
 - [Redis](https://redis.io/)
